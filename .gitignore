@@ -1,0 +1,44 @@
+# Environment / secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Pipecat / model caches
+*.onnx
+.cache/
+
+# Logs
+*.log
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ngrok
+ngrok
+ngrok.yml
+
+# Local recordings / temp audio (if using local Whisper/Piper)
+*.wav
+*.mp3
+recording_*.wav
+
+# Excel temp/lock files
+~$*.xlsx
