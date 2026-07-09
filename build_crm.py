@@ -36,6 +36,20 @@ sample_leads = [
      "", "10-Jul-2026 3:00 PM", "05-Jul-2026 11:20 AM"],
     ["L005", "Karan Malhotra", "+91-9834567123", "Malhotra Auto Parts", "karan@malhotraauto.com",
      "Pending", "", "", "", "", "", "", "", ""],
+    ["L006", "Vishesh Unadkat", "+91-9876512345", "Unadkat Technologies", "vishesh@unadkattech.com",
+     "Pending", "", "", "", "", "", "", "", ""],
+
+    ["L007", "Nirmit Patel", "+91-9823012345", "Patel Agro Solutions", "nirmit@patelagro.com",
+     "Pending", "", "", "", "", "", "", "", ""],
+
+    ["L008", "Priyank Shah", "+91-9811123456", "Shah Digital Marketing", "priyank@shahdigital.in",
+     "Pending", "", "", "", "", "", "", "", ""],
+
+    ["L009", "Yug Joshi", "+91-9845012345", "Joshi Electronics", "yug@joshielectronics.com",
+     "Pending", "", "", "", "", "", "", "", ""],
+
+    ["L010", "Hari Desai", "+91-9834512345", "Desai Foods Pvt Ltd", "hari@desaifoods.com",
+     "Pending", "", "", "", "", "", "", "", ""], 
 ]
 for row in sample_leads:
     sheet.append(row)
