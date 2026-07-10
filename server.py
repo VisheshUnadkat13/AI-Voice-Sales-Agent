@@ -10,7 +10,8 @@ from fastapi.staticfiles import StaticFiles
 from llm_client import chat
 from prompts import build_agent_system_prompt
 from stt_client import transcribe
-from tts_client import synthesize
+# from tts_client import synthesize
+from tts_client import synthesize_async
 from excel_manager import get_next_pending_lead, update_lead_record
 from summarizer import summarize_call
 
@@ -32,7 +33,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 @app.post("/api/start_call")
-def start_call():
+async def start_call():
     result = get_next_pending_lead()
     if result is None:
         raise HTTPException(404, "No pending leads left in the CRM.")
@@ -58,7 +59,8 @@ def start_call():
     }
 
     audio_path = os.path.join(TMP_DIR, f"{session_id}_opening.mp3")
-    synthesize(opening, audio_path)
+    # synthesize(opening, audio_path)
+    await synthesize_async(opening, audio_path)
 
     return {
         "session_id": session_id,
@@ -91,7 +93,8 @@ async def turn(session_id: str = Form(...), audio: UploadFile = None):
 
     out_name = f"{session_id}_{uuid.uuid4().hex}.mp3"
     out_path = os.path.join(TMP_DIR, out_name)
-    synthesize(reply, out_path)
+    # synthesize(reply, out_path)
+    await synthesize_async(reply, out_path)
 
     return {
         "lead_text": lead_text,
