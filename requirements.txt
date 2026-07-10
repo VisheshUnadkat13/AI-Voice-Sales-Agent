@@ -7,3 +7,4 @@ groq
 fastapi
 uvicorn
 python-multipart
+edge-tts
